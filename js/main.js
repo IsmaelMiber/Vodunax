@@ -26,13 +26,16 @@ var counter = setInterval(function() {
         hours = '0' + hours;
     }
     
+    if(length < 0) {
+        clearInterval(counter);
+        hours = "00";
+        minutes = "00";
+        seconds = "00";
+    }
+    
     $('.hours').text(hours);
     $('.minutes').text(minutes);
     $('.seconds').text(seconds);
-    
-    if(length < 0) {
-        clearInterval(counter);
-    }
     
 }, 1000);
 
